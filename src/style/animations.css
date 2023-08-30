@@ -1,0 +1,20 @@
+@keyframes slideleft {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes slideright {
+  from {
+    margin-right: 200%;
+    width: 100%;
+  }
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}/*# sourceMappingURL=animations.css.map */
