@@ -34,12 +34,14 @@ export const EventDetail = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "75vh",
+            flexDirection: "column",
           }}
         >
           <CircularProgress
             sx={{ color: "orange" }}
             size={"7rem"}
           ></CircularProgress>
+          <div className="loading-content mt-5">Loading Details ...</div>
         </div>
       ) : (
         <div className="container detail-card">

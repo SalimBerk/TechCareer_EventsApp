@@ -26,12 +26,20 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="navbar-item has-dropdown is-hoverable">
+        <div className="navbar-item ">
           <div className="navbar-dropdown">
-            <a className="navbar-item">Home</a>
-            <a className="navbar-item">Events</a>
-            <a className="navbar-item">About</a>
-            <a className="navbar-item">Contact</a>
+            <Link className="navbar-item" to="/">
+              Home
+            </Link>
+            <Link className="navbar-item" to="/PastEvents">
+              Past Events
+            </Link>
+            <Link className="navbar-item" to="/About">
+              About
+            </Link>
+            <Link className="navbar-item" to="/Contact">
+              Contact
+            </Link>
           </div>
         </div>
       </nav>

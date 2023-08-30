@@ -53,12 +53,16 @@ export const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "75vh",
+            flexDirection: "column",
           }}
         >
           <CircularProgress
             sx={{ color: "orange" }}
             size={"7rem"}
           ></CircularProgress>
+          <div>
+            <div className="loading-content mt-5">Loading Events ...</div>
+          </div>
         </div>
       ) : (
         <>
@@ -95,7 +99,7 @@ export const Home = () => {
               alignItems: "center",
               width: "70%",
               margin: "auto",
-              padding: "1rem",
+              padding: "0.1rem",
             }}
           >
             {items.map((item, i) => (

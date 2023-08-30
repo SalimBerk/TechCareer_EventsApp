@@ -59,12 +59,14 @@ export const PastEvents = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "75vh",
+            flexDirection: "column",
           }}
         >
           <CircularProgress
             sx={{ color: "orange" }}
             size={"7rem"}
           ></CircularProgress>
+          <div className="loading-content mt-5">Loading Past Events ...</div>
         </div>
       ) : (
         <div className="container-fluid">

@@ -1,3 +1,28 @@
+@keyframes slideleft {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes slideright {
+  from {
+    margin-right: 200%;
+    width: 100%;
+  }
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .carousel-title {
+    font-weight: 500;
+  }
+}
 .navbar {
   border: 3px solid;
   padding: 1rem;
@@ -10,10 +35,14 @@
   font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 2px orange;
+  animation-name: slideleft;
+  animation-duration: 2s;
 }
 .navbar .navbar-menu a {
   text-shadow: 2px 2px orange;
   font-weight: bold;
+  animation-name: slideright;
+  animation-duration: 1s;
 }
 
 .footer {
@@ -118,4 +147,11 @@
 }
 .social-media .social-media-icon {
   margin: 1rem;
+}
+
+.loading-content {
+  color: orange;
+  text-shadow: 2px 2px black;
+  font-size: 30px;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */
