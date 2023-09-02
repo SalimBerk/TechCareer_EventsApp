@@ -22,7 +22,14 @@
   .carousel-title {
     font-weight: 500;
   }
+  .past-events {
+    margin-top: 2rem;
+  }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   border: 3px solid;
   padding: 1rem;
@@ -64,7 +71,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border: 3px solid black;
+  border: 5px solid orange;
   padding: 3rem;
   margin: 2rem;
   margin-bottom: 150px;
@@ -107,6 +114,11 @@
   height: calc(100% - 15px);
   margin-bottom: 1rem;
   margin-top: 1rem;
+  border-radius: 50px;
+  border: 2px solid orange;
+}
+.card .card-body {
+  padding: 2rem;
 }
 
 .detail-card {
@@ -119,7 +131,8 @@
   align-self: center;
   border-radius: 50px;
   margin-bottom: "300px";
-  border: 3px solid black;
+  border: 3px solid orange;
+  border-radius: 50px;
   width: calc(60% - 45px);
 }
 .detail-card .detail-content {
@@ -127,6 +140,21 @@
   padding: 1rem;
   border-radius: 30px;
   line-height: 1.6;
+}
+
+.about {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+.about .about-content {
+  border: 2px solid orange;
+  padding: 1rem;
+  border-radius: 30px;
+  line-height: 1.6;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
 }
 
 .past-cards .card-img-top {
@@ -154,4 +182,27 @@
   text-shadow: 2px 2px black;
   font-size: 30px;
   font-weight: bold;
+}
+
+.gotoup {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 70px;
+  right: 50px;
+  color: orange;
+}
+
+button {
+  all: unset;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background: orange;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 300px;
 }/*# sourceMappingURL=main.css.map */

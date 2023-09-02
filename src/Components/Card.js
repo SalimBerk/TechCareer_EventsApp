@@ -4,10 +4,14 @@ export const Card = ({ item }) => {
   return (
     <div className="col-md-4 ">
       <div className="card gap-3">
-        <a href={`/Events/${item.Id}`}>
+        <a href={`/events/${item.id}`}>
           <img
-            className="card-img-top"
-            src={item.Photo ? item.Photo : nopicture}
+            style={{
+              borderTopLeftRadius: "50px",
+              borderTopRightRadius: "50px",
+            }}
+            className="card-img-top h-100"
+            src={item.image ? item.image : nopicture}
           ></img>
         </a>
         <div className="card-body">
@@ -15,12 +19,10 @@ export const Card = ({ item }) => {
             className="card-title"
             style={{ fontWeight: "bold", fontSize: "22px" }}
           >
-            {item.Title}
+            {item.artist ? item.artist : item.title}
           </h2>
           <p className="card-text">
-            {item.Content.substring(0, 150)
-              .replace(/<[^>]+>/g, "")
-              .replace(/[@!^&\/\\#,+()$~%.'":*?<>{}]/g, "")}
+            {item.description.substring(0, 100)}
             ...
           </p>
         </div>

@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { Card } from "../Components/Card";
 import CircularProgress from "@mui/material/CircularProgress";
+import NavigationIcon from "@mui/icons-material/Navigation";
 
 export const PastEvents = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -16,33 +17,29 @@ export const PastEvents = () => {
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
   const getPastEvents = () =>
-    axios
-      .get(
-        "https://api.ibb.gov.tr/MetroIstanbul/api/MetroMobile/V2/GetActivities"
-      )
-      .then((res) => {
-        setPastEvents(
-          res.data.Data.filter(
-            (item) =>
-              new Date(item.StartDate).getFullYear() &&
-              new Date(item.StartDate).getMonth() &&
-              new Date(item.StartDate).getDate() < today.getFullYear() &&
-              today.getMonth() &&
-              today.getDate()
-          )
-        );
-        setSearchEvents(
-          res.data.Data.filter(
-            (item) =>
-              new Date(item.StartDate).getFullYear() &&
-              new Date(item.StartDate).getMonth() &&
-              new Date(item.StartDate).getDate() < today.getFullYear() &&
-              today.getMonth() &&
-              today.getDate()
-          )
-        );
-        setProgress(false);
-      });
+    axios.get("http://localhost:3000/events").then((res) => {
+      setPastEvents(
+        res.data.filter(
+          (item) =>
+            new Date(item.date).getFullYear() &&
+            new Date(item.date).getMonth() &&
+            new Date(item.date).getDate() < today.getFullYear() &&
+            today.getMonth() &&
+            today.getDate()
+        )
+      );
+      setSearchEvents(
+        res.data.filter(
+          (item) =>
+            new Date(item.date).getFullYear() &&
+            new Date(item.date).getMonth() &&
+            new Date(item.date).getDate() < today.getFullYear() &&
+            today.getMonth() &&
+            today.getDate()
+        )
+      );
+      setProgress(false);
+    });
 
   useEffect(() => {
     getPastEvents();
@@ -72,7 +69,7 @@ export const PastEvents = () => {
         <div className="container-fluid">
           <div className="row">
             <span></span>
-            <div className="col-md-2 mt-5 text-center ">
+            <div className="col-md-2 mt-5 text-center date-filter ">
               <h3
                 style={{
                   marginBottom: "1rem",
@@ -102,13 +99,13 @@ export const PastEvents = () => {
                   setStartDate(date);
                   setPastEvents(
                     newSearchEvents.filter(
-                      (item) => new Date(item.StartDate) >= date
+                      (item) => new Date(item.date) >= date
                     )
                   );
                 }}
               />
             </div>
-            <div className="col-md-10">
+            <div className="col-md-10 past-events">
               <h1
                 style={{
                   textAlign: "center",
@@ -128,6 +125,22 @@ export const PastEvents = () => {
               </div>
             </div>
           </div>
+          <a href="#" className="gotoup">
+            <NavigationIcon
+              sx={{ fontSize: "80px" }}
+              className="gotoup-icon"
+            ></NavigationIcon>
+            <p
+              style={{
+                textAlign: "center",
+                right: "50px",
+                position: "fixed",
+                fontWeight: "bold",
+              }}
+            >
+              UP
+            </p>
+          </a>
         </div>
       )}
     </>

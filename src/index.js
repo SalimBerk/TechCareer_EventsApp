@@ -8,13 +8,12 @@ import Footer from "./Components/Footer";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <>
     <BrowserRouter>
       <Navbar></Navbar>
-
       <App />
-
       <Footer></Footer>
     </BrowserRouter>
   </>
