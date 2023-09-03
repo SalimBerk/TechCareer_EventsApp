@@ -1,5 +1,7 @@
 # Evento Events Site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5af8d68f-91e8-4be5-b1eb-b87cce582cae/deploy-status)](https://app.netlify.com/sites/superb-muffin-db394e/deploys)
+
 ---
 
 ## Features
