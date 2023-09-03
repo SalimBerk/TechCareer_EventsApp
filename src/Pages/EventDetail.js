@@ -35,12 +35,10 @@ export const EventDetail = () => {
   };
 
   const getDetailById = () => {
-    axios
-      .get("https://eventsapp-backend-237b7b451647.herokuapp.com/events")
-      .then((res) => {
-        setDetail(res.data.find((item) => item.id == id));
-        setProgress(false);
-      });
+    axios.get("http://localhost:3000/events").then((res) => {
+      setDetail(res.data.find((item) => item.id == id));
+      setProgress(false);
+    });
   };
   useEffect(() => {
     getDetailById();
