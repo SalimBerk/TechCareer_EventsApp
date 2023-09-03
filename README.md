@@ -25,5 +25,5 @@
 ## Development Stage
 
 I have carried datas to json-server. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
-[Netlify]("https://superb-muffin-db394e.netlify.app")
+[Netlify Link]([https://duckduckgo.com](https://superb-muffin-db394e.netlify.app)https://superb-muffin-db394e.netlify.app)
 
