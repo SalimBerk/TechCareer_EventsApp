@@ -20,3 +20,12 @@
     width: 100%;
   }
 }
+
+@keyframes mypicture {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}

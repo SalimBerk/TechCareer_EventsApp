@@ -193,3 +193,11 @@ button {
   margin-left: 2rem;
   margin-bottom: 8rem;
 }
+
+.profile {
+  display: "flex";
+  align-self: center;
+  .profile-image {
+    animation: mypicture 4s;
+  }
+}

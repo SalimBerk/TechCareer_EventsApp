@@ -17,4 +17,12 @@
     margin-right: 0%;
     width: 100%;
   }
+}
+@keyframes mypicture {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=animations.css.map */

@@ -1,5 +1,5 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+
 import Profile from "../img/profil.jpg";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -24,17 +24,21 @@ export const About = () => {
         follow me on our Social Media and we can reach new communities.Together
         we want to reach new aims with your supports.
       </div>
-      <div style={{ display: "flex", alignSelf: "center" }}>
-        <img
-          src={Profile}
-          style={{
-            borderRadius: "120px",
-            width: "200px",
-            alignSelf: "center",
-            marginTop: "4rem",
-            border: "2px solid orange",
-          }}
-        ></img>
+      <div className="profile">
+        <a href="https://www.instagram.com/salimberk_uzun/?utm_source=qr&igshid=OGIxMTE0OTdkZA==">
+          <img
+            className="profile-image"
+            src={Profile}
+            style={{
+              borderRadius: "120px",
+              width: "200px",
+              alignSelf: "center",
+              marginTop: "4rem",
+              border: "2px solid orange",
+            }}
+          ></img>
+        </a>
+
         <a href="https://www.instagram.com/salimberk_uzun/?utm_source=qr&igshid=OGIxMTE0OTdkZA==">
           <InstagramIcon
             sx={{

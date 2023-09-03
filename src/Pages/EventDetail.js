@@ -35,10 +35,12 @@ export const EventDetail = () => {
   };
 
   const getDetailById = () => {
-    axios.get("http://localhost:3000/events").then((res) => {
-      setDetail(res.data.find((item) => item.id == id));
-      setProgress(false);
-    });
+    axios
+      .get("https://eventsapp-backend-237b7b451647.herokuapp.com/events")
+      .then((res) => {
+        setDetail(res.data.find((item) => item.id == id));
+        setProgress(false);
+      });
   };
   useEffect(() => {
     getDetailById();
@@ -77,7 +79,7 @@ export const EventDetail = () => {
             }}
             onClick={handleOpen}
           >
-            About Ticket{" "}
+            About Ticket
             <ConfirmationNumberIcon
               sx={{ marginLeft: "20px", color: "orange" }}
             ></ConfirmationNumberIcon>
@@ -128,8 +130,8 @@ export const EventDetail = () => {
                 component="div"
                 sx={{
                   width: "700px",
-                  height: "500px",
-                  border: "3px solid orange",
+                  height: "450px",
+                  border: "5px solid orange",
                   display: "flex",
                   alignSelf: "center",
                   borderRadius: "20px",
@@ -137,8 +139,9 @@ export const EventDetail = () => {
               >
                 <iframe
                   src={detail.maplink}
-                  width="700"
-                  height="500"
+                  style={{ borderRadius: "20px" }}
+                  width="700px"
+                  height="441px"
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

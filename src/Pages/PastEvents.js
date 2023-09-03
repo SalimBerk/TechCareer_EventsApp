@@ -17,16 +17,18 @@ export const PastEvents = () => {
   var today = new Date();
 
   const getPastEvents = async () =>
-    await axios.get("http://localhost:3000/events").then((res) => {
-      setEvent(
-        res.data.filter((item) => {
-          var date = new Date(item.date);
-          return date < today;
-        })
-      );
+    await axios
+      .get("https://eventsapp-backend-237b7b451647.herokuapp.com/events")
+      .then((res) => {
+        setEvent(
+          res.data.filter((item) => {
+            var date = new Date(item.date);
+            return date < today;
+          })
+        );
 
-      setProgress(false);
-    });
+        setProgress(false);
+      });
 
   useEffect(() => {
     getPastEvents();

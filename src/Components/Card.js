@@ -20,7 +20,7 @@ export const Card = ({ item }) => {
               borderTopRightRadius: "50px",
               position: "relative",
             }}
-            className="card-img-top h-100"
+            className="card-img-top "
             src={item.image ? item.image : nopicture}
           ></img>
           <div
