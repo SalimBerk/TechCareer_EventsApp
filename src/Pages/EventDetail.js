@@ -103,7 +103,13 @@ export const EventDetail = () => {
             {detail.artist ? detail.artist : detail.title}
           </Typography>
           <p className="detail-content">
-            {String(detail.description).replace(/<[^>]+>/g, "")}
+            {detail.description.length > 0 ? (
+              String(detail.description).replace(/<[^>]+>/g, "")
+            ) : (
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <p>Description Not Found.</p>
+              </Typography>
+            )}
           </p>
 
           <Typography
@@ -133,9 +139,9 @@ export const EventDetail = () => {
                   src={detail.maplink}
                   width="700"
                   height="500"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </Box>
             </>

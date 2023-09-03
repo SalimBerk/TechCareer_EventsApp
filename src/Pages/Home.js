@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Carousel from "react-material-ui-carousel";
 import axios from "axios";
@@ -20,12 +20,16 @@ import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FestivalIcon from "@mui/icons-material/Festival";
 import SocialDistanceIcon from "@mui/icons-material/SocialDistance";
 import Avatar from "@mui/material/Avatar";
+import { GetDataContext } from "../context/GetDataContext";
+import DatePicker from "react-datepicker";
+import ErrorIcon from "@mui/icons-material/Error";
 
 export const Home = () => {
-  const [event, setEvent] = useState([]);
   const [value, setValue] = useState("");
   const [newEvents, setNewEvents] = useState([]);
   const [progress, setProgress] = useState(true);
+  const { event, setEvent } = useContext(GetDataContext);
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -62,8 +66,8 @@ export const Home = () => {
       setProgress(false);
     });
   };
-  const getData = () =>
-    axios.get("http://localhost:3000/events").then((res) => {
+  const getData = async () =>
+    await axios.get("http://localhost:3000/events").then((res) => {
       setEvent(res.data);
       console.log(res.data);
       setNewEvents(res.data);
@@ -251,6 +255,7 @@ export const Home = () => {
                 }}
               ></ManageSearchIcon>
               <TextField
+                sx={{ input: { color: "#1976D2", fontWeight: "bold" } }}
                 fullWidth
                 id="outlined-basic"
                 label="Filtered Events"
@@ -367,13 +372,89 @@ export const Home = () => {
                   </ListItem>
                 </button>
               </List>
+              <div className="date-filter">
+                <h3
+                  style={{
+                    marginBottom: "1rem",
+                    textShadow: "1px 1px orange",
+                    fontWeight: "bold",
+                    marginTop: "10rem",
+                    fontSize: "20px",
+                  }}
+                >
+                  List Events By Date
+                </h3>
+                <p
+                  style={{
+                    marginBottom: "1rem",
+                    textShadow: "1px 1px orange",
+                    fontWeight: "bold",
+                    border: "1px solid orange",
+                    borderRadius: "40px",
+                    padding: "0.6rem",
+                    textAlign: "center",
+                    fontSize: "25px",
+                  }}
+                >
+                  Please enter a value as start
+                </p>
+                <DatePicker
+                  className="datepicker"
+                  selected={startDate}
+                  minDate={new Date("01-01-2023")}
+                  maxDate={new Date("10-31-2023")}
+                  onChange={(date) => {
+                    setStartDate(date);
+                    setEvent(
+                      newEvents.filter((item) => {
+                        var selectedDate = new Date(item.date);
+                        return selectedDate >= date;
+                      })
+                    );
+                  }}
+                />
+              </div>
             </div>
             <div className="col-md-10">
               <div className="container-fluid gap-2 mx-4 my-3">
                 <div className="row mx-4">
-                  {event.map((item, index) => {
-                    return <Card item={item} key={index}></Card>;
-                  })}
+                  {event.length > 0 ? (
+                    event.map((item, index) => {
+                      return <Card item={item} key={index}></Card>;
+                    })
+                  ) : (
+                    <div
+                      className="container"
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "75vh",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontWeight: "300",
+                          textAlign: "center",
+                          color: "orange",
+                          textShadow: "2px 2px black",
+                        }}
+                        variant="h3"
+                      >
+                        Event Not Found
+                      </Typography>
+                      <ErrorIcon
+                        sx={{
+                          fontSize: "300px",
+                          marginTop: "2rem",
+                          color: "orange",
+                          border: "2px dashed black",
+                          borderRadius: "160px",
+                        }}
+                      ></ErrorIcon>
+                    </div>
+                  )}
                 </div>
               </div>
               <a href="#" className="gotoup">

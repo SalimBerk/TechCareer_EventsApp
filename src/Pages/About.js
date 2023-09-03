@@ -7,16 +7,22 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 export const About = () => {
   return (
     <div className="container mt-5 about">
-      <Typography
-        variant="h2"
-        sx={{ color: "black", textAlign: "center", fontWeight: "bold" }}
+      <h1
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "40px",
+          marginTop: "2rem",
+          marginBottom: "1rem",
+          textShadow: "2px 2px orange",
+        }}
       >
         About Us
-      </Typography>
+      </h1>
       <div className="about-content">
         We were founded in 2023 about sharing new events in the Turkey. You
-        follow us on our Social Media and we can reach new communities. We want
-        to reach new aims with your supports
+        follow me on our Social Media and we can reach new communities.Together
+        we want to reach new aims with your supports.
       </div>
       <div style={{ display: "flex", alignSelf: "center" }}>
         <img
