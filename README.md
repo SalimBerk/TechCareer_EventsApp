@@ -1,5 +1,7 @@
 # Evento Events Site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5af8d68f-91e8-4be5-b1eb-b87cce582cae/deploy-status)](https://app.netlify.com/sites/superb-muffin-db394e/deploys)
+
 ---
 
 ## Features
@@ -22,6 +24,6 @@
 
 ## Development Stage
 
-I have carried json folder to the Heroku platform. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
-[Netlify](https://duckduckgo.com "The best search engine for privacy")
+I have carried datas to json-server. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
+[Netlify App](https://superb-muffin-db394e.netlify.app)
 
