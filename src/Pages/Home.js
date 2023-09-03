@@ -39,21 +39,21 @@ export const Home = () => {
     setEvent(newdata);
   };
   const listConcerts = async () => {
-    await axios.get("https://localhost:3000/concerts").then((res) => {
+    await axios.get("http://localhost:3000/concerts").then((res) => {
       setEvent(res.data);
       setNewEvents(res.data);
       setProgress(false);
     });
   };
   const listFestivals = async () => {
-    await axios.get("https://localhost:3000/festivals").then((res) => {
+    await axios.get("http://localhost:3000/festivals").then((res) => {
       setEvent(res.data);
       setNewEvents(res.data);
       setProgress(false);
     });
   };
   const listTheaters = async () => {
-    await axios.get("https://localhost:3000/theaters").then((res) => {
+    await axios.get("http://localhost:3000/theaters").then((res) => {
       setEvent(res.data);
       setNewEvents(res.data);
       setProgress(false);
