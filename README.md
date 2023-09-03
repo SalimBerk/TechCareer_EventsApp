@@ -1,12 +1,26 @@
-## Web Design And Filtering Datas - 28.08.2023
+# Evento Events Site
 
->  I made design of main page and listed datas.
+---
 
-![mainpage](https://github.com/SalimBerk/TechCareer_EventsApp/assets/77536512/9b5b5aa3-7db6-44c4-b282-0f020cccbc25)
+## Features
 
+- You can follow new events.
+- You can see details of events.
+- You can learn where you will buy ticket.
 
-## Detail Page And Filtering Datas By Starting Time - 30.08.2023
+---
 
->  I made up detail page and pulled events by starting time.
+## Used Technologies
 
-![PastEvents](https://github.com/SalimBerk/TechCareer_EventsApp/assets/77536512/1a4a5157-db71-4eae-9652-caa7d0266037)
+- **Context Api** : I have made state managment with Context Api.
+- **Sass** : I have used Sass for style managment.
+- **Material UI**: I have used Material UI for design of my site. For instance you will see modal and react carousel component.
+- **React Router Dom**: I have used Router Dom transition of among pages
+
+---
+
+## Development Stage
+
+I have carried json folder to the Heroku platform. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site below from the link
+*[Markdown Guide](https://www.markdownguide.org)*.
+
