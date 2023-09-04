@@ -25,5 +25,5 @@
 ## Development Stage
 
 I have carried datas to json-server. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
-[[Netlify App](https://superb-muffin-db394e.netlify.app)](https://transcendent-tiramisu-9837d0.netlify.app)https://transcendent-tiramisu-9837d0.netlify.app
+[Netlify App](https://transcendent-tiramisu-9837d0.netlify.app/)
 
