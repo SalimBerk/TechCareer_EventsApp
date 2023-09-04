@@ -24,6 +24,6 @@
 
 ## Development Stage
 
-I have carried datas to json-server. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
+I have carried datas to the heroku platform. I have pulled datas from there and uploaded Netlify.If you want, you can reach to demo of my site  from the link
 [Netlify App](https://transcendent-tiramisu-9837d0.netlify.app/)
 
