@@ -39,40 +39,50 @@ export const Home = () => {
     setEvent(newdata);
   };
   const listConcerts = async () => {
-    await axios.get("http://localhost:3000/concerts").then((res) => {
-      setEvent(res.data);
-      setNewEvents(res.data);
-      setProgress(false);
-    });
+    await axios
+      .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/concerts")
+      .then((res) => {
+        setEvent(res.data);
+        setNewEvents(res.data);
+        setProgress(false);
+      });
   };
   const listFestivals = async () => {
-    await axios.get("http://localhost:3000/festivals").then((res) => {
-      setEvent(res.data);
-      setNewEvents(res.data);
-      setProgress(false);
-    });
+    await axios
+      .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/festivals")
+      .then((res) => {
+        setEvent(res.data);
+        setNewEvents(res.data);
+        setProgress(false);
+      });
   };
   const listTheaters = async () => {
-    await axios.get("http://localhost:3000/theaters").then((res) => {
-      setEvent(res.data);
-      setNewEvents(res.data);
-      setProgress(false);
-    });
+    await axios
+      .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/theaters")
+      .then((res) => {
+        setEvent(res.data);
+        setNewEvents(res.data);
+        setProgress(false);
+      });
   };
   const listStandUps = async () => {
-    await axios.get("http://localhost:3000/standups").then((res) => {
-      setEvent(res.data);
-      setNewEvents(res.data);
-      setProgress(false);
-    });
+    await axios
+      .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/standups")
+      .then((res) => {
+        setEvent(res.data);
+        setNewEvents(res.data);
+        setProgress(false);
+      });
   };
   const getData = async () =>
-    await axios.get("http://localhost:3000/events").then((res) => {
-      setEvent(res.data);
-      console.log(res.data);
-      setNewEvents(res.data);
-      setProgress(false);
-    });
+    await axios
+      .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/events")
+      .then((res) => {
+        setEvent(res.data);
+        console.log(res.data);
+        setNewEvents(res.data);
+        setProgress(false);
+      });
   useEffect(() => {
     getData();
   }, []);
