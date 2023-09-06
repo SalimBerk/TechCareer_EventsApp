@@ -72,7 +72,7 @@ export const EventsByCity = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  Aşağıda Şehirlere Göre Diğer Etkinlikleri Görebilirsin
+                  Aşağıda Tıkladığın Şehre Göre Etkinlikleri Görebilirsin.
                 </Typography>
 
                 <LocationCityIcon
