@@ -207,7 +207,9 @@ export const Home = () => {
             size={"7rem"}
           ></CircularProgress>
           <div>
-            <div className="loading-content mt-5">Loading Events ...</div>
+            <div className="loading-content mt-5">
+              Etkinlikler Yükleniyor ...
+            </div>
           </div>
         </div>
       ) : (
@@ -222,7 +224,7 @@ export const Home = () => {
               textShadow: "2px 2px orange",
             }}
           >
-            Popular Events
+            Popüler Etkinlikler
           </h1>
           <Carousel
             indicatorIconButtonProps={{
@@ -268,7 +270,7 @@ export const Home = () => {
                 sx={{ input: { color: "#1976D2", fontWeight: "bold" } }}
                 fullWidth
                 id="outlined-basic"
-                label="Filtered Events"
+                label="Etkinlik Ara"
                 variant="outlined"
                 value={value}
                 onChange={handleChange}
@@ -299,7 +301,7 @@ export const Home = () => {
                           fontWeight: "bold",
                         }}
                       >
-                        Concerts
+                        Konserler
                       </span>
                     </ListItemText>
                   </ListItem>
@@ -324,7 +326,7 @@ export const Home = () => {
                           fontWeight: "bold",
                         }}
                       >
-                        Theaters
+                        Tiyatrolar
                       </span>
                     </ListItemText>
                   </ListItem>
@@ -350,7 +352,7 @@ export const Home = () => {
                           fontWeight: "bold",
                         }}
                       >
-                        Festivals
+                        Festivaller
                       </span>
                     </ListItemText>
                   </ListItem>
@@ -376,7 +378,7 @@ export const Home = () => {
                           fontWeight: "bold",
                         }}
                       >
-                        StandUps
+                        Standuplar
                       </span>
                     </ListItemText>
                   </ListItem>
@@ -392,7 +394,7 @@ export const Home = () => {
                     fontSize: "20px",
                   }}
                 >
-                  List Events By Date
+                  Etkinlikleri Tarihe Göre Listele
                 </h3>
                 <p
                   style={{
@@ -406,7 +408,7 @@ export const Home = () => {
                     fontSize: "25px",
                   }}
                 >
-                  Please enter a value as start
+                  Lütfen Bir Başlangıç Değeri Girin.
                 </p>
                 <DatePicker
                   className="datepicker"
@@ -452,7 +454,7 @@ export const Home = () => {
                         }}
                         variant="h3"
                       >
-                        Event Not Found
+                        Etkinlik Bulunamadı.
                       </Typography>
                       <ErrorIcon
                         sx={{

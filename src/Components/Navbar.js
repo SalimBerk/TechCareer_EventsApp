@@ -13,26 +13,26 @@ const Navbar = () => {
         <div className="navbar-menu">
           <div className="navbar-end">
             <Link className="navbar-item" to="/">
-              Home
+              Anasayfa
             </Link>
             <Link className="navbar-item" to="/PastEvents">
-              Past Events
+              Geçmiş Etkinlikler
             </Link>
             <Link className="navbar-item" to="/About">
-              About
+              Hakkımızda
             </Link>
           </div>
         </div>
         <div className="navbar-item ">
           <div className="navbar-dropdown">
             <Link className="navbar-item" to="/">
-              Home
+              Anasayfa
             </Link>
             <Link className="navbar-item" to="/PastEvents">
-              Past Events
+              Geçmiş Etkinlikler
             </Link>
             <Link className="navbar-item" to="/About">
-              About
+              Hakkımızda
             </Link>
           </div>
         </div>

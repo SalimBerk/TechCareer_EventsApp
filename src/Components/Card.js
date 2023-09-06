@@ -13,7 +13,7 @@ export const Card = ({ item }) => {
   return (
     <div className="col-md-4 ">
       <div className="card gap-3">
-        <a href={`/events/${item.id}`}>
+        <a className="wrapper" href={`/events/${item.id}`}>
           <img
             style={{
               borderTopLeftRadius: "50px",
@@ -41,7 +41,7 @@ export const Card = ({ item }) => {
               }}
             >
               <p style={{ fontWeight: "bold", color: "white" }}>
-                Time Over{" "}
+                Süre Doldu
                 <AccessTimeIcon sx={{ marginLeft: "0.4rem" }}></AccessTimeIcon>
               </p>
             </div>

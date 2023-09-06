@@ -6,9 +6,11 @@ import { EventDetail } from "./Pages/EventDetail";
 import { PastEvents } from "./Pages/PastEvents";
 import { useState } from "react";
 import { GetDataContext } from "./context/GetDataContext";
+import { EventsByCity } from "./Pages/EventsByCity";
 
 function App() {
   const [event, setEvent] = useState([]);
+
   return (
     <>
       <GetDataContext.Provider value={{ event, setEvent }}>
@@ -20,6 +22,10 @@ function App() {
           <Route
             path="/Events/:id"
             element={<EventDetail></EventDetail>}
+          ></Route>
+          <Route
+            path="/events/city?"
+            element={<EventsByCity></EventsByCity>}
           ></Route>
         </Routes>
       </GetDataContext.Provider>

@@ -51,7 +51,9 @@ export const PastEvents = () => {
             sx={{ color: "orange" }}
             size={"7rem"}
           ></CircularProgress>
-          <div className="loading-content mt-5">Loading Past Events ...</div>
+          <div className="loading-content mt-5">
+            Geçmiş Etkinlikler Yükleniyor ...
+          </div>
         </div>
       ) : (
         <div className="container-fluid">
@@ -68,7 +70,7 @@ export const PastEvents = () => {
                   textShadow: "2px 2px orange",
                 }}
               >
-                Past Events
+                Geçmiş Etkinlikler
               </h1>
               {event.length < 0 ? (
                 <div
@@ -90,7 +92,7 @@ export const PastEvents = () => {
                     }}
                     variant="h3"
                   >
-                    Event Not Found
+                    Etkinlik Bulunamadı
                   </Typography>
                   <ErrorIcon
                     sx={{

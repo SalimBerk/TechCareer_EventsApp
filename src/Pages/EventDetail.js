@@ -9,33 +9,20 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import ShareIcon from "@mui/icons-material/Share";
 import Box from "@mui/material/Box";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import Modal from "@mui/material/Modal";
-import Button from "@mui/material/Button";
-import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Link } from "react-router-dom";
 
 export const EventDetail = () => {
   const { id } = useParams();
   const [detail, setDetail] = useState([]);
   const [progress, setProgress] = useState(true);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-    border: "2px solid orange",
-    borderRadius: "50px",
-  };
 
-  const getDetailById = () => {
-    axios
+  const getDetailById = async () => {
+    await axios
       .get("https://eventsapp-backend-284c585dbd16.herokuapp.com/events")
       .then((res) => {
         setDetail(res.data.find((item) => item.id == id));
@@ -63,43 +50,70 @@ export const EventDetail = () => {
             sx={{ color: "orange" }}
             size={"7rem"}
           ></CircularProgress>
-          <div className="loading-content mt-5">Loading Details ...</div>
+          <div className="loading-content mt-5">
+            Etkinlik Detayları Yükleniyor ...
+          </div>
         </div>
       ) : (
         <div className="container detail-card">
           <img className="detail-image" src={detail.image}></img>
-
-          <Button
+          <Accordion
             sx={{
-              width: "250px",
+              width: "60%",
               alignSelf: "center",
-              border: "2px solid orange",
-              borderRadius: "50px",
-              color: "black",
+              border: "1px solid black",
+              borderRadius: "20px",
             }}
-            onClick={handleOpen}
           >
-            About Ticket
-            <ConfirmationNumberIcon
-              sx={{ marginLeft: "20px", color: "orange" }}
-            ></ConfirmationNumberIcon>
-          </Button>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <p>Starting Time</p>({detail.time} - {detail.date})
+            <AccordionSummary
+              sx={{ color: "black" }}
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                sx={{
+                  fontWeight: "bolder",
+                  textShadow: "1px 1px orange",
+                  fontSize: "25px",
+                }}
+              >
+                Etkinlik Detayları
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                You can buy ticket from
-                <strong style={{ fontSize: "20px" }}>"{detail.ticket}"</strong>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography sx={{ fontSize: "15px" }} paragraph={true}>
+                Bu etkinliğe katılmak için biletini
+                <span style={{ fontWeight: "bolder" }}>"{detail.ticket}"</span>
+                den alabilirsin.
               </Typography>
-            </Box>
-          </Modal>
+              <Typography variant="body2" paragraph={true}>
+                Etkinlik Başlama Tarihi:{" "}
+                <span style={{ fontWeight: "bolder" }}>{detail.date}</span>
+              </Typography>
+              <Typography variant="body2" paragraph={true}>
+                Etkinlik Başlama Saati:{" "}
+                <span style={{ fontWeight: "bolder" }}>{detail.time}</span>
+              </Typography>
+              <Typography variant="body2" paragraph={true}>
+                Etkinlik Şehri:{" "}
+                <span style={{ fontWeight: "bolder" }}>
+                  <Link to={`/events/?city=${detail.city}`}>{detail.city}</Link>
+                </span>
+                <ArrowBackIcon sx={{ marginLeft: "1rem" }}></ArrowBackIcon>
+                <span
+                  style={{
+                    marginLeft: "1rem",
+                    fontSize: "15px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Burada Şehir İsmine Tıklayarak Bu Şehirdeki Diğer Etkinlikleri
+                  Görebilirsin.
+                </span>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
 
           <Typography sx={{ fontWeight: "700" }} variant="h4">
             {detail.artist ? detail.artist : detail.title}
@@ -109,7 +123,7 @@ export const EventDetail = () => {
               String(detail.description).replace(/<[^>]+>/g, "")
             ) : (
               <Typography id="modal-modal-title" variant="h6" component="h2">
-                <p>Description Not Found.</p>
+                <p>Etkinlik Açıklaması Bulunamadı.</p>
               </Typography>
             )}
           </p>
@@ -158,7 +172,7 @@ export const EventDetail = () => {
               }}
               variant="h3"
             >
-              Location Not Found
+              Konum Bilgisi Bulunamadı.
             </Typography>
           )}
 
@@ -166,7 +180,8 @@ export const EventDetail = () => {
             sx={{ fontWeight: "700", textAlign: "center" }}
             variant="h5"
           >
-            If you want,you can share events <ShareIcon></ShareIcon>
+            Eğer istersen bu etkinliği sosyal medya hesabından paylaşabilirsin.{" "}
+            <ShareIcon></ShareIcon>
           </Typography>
           <div className="social-media">
             <a href="https://tr-tr.facebook.com/" className="social-media-icon">

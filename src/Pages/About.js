@@ -17,12 +17,14 @@ export const About = () => {
           textShadow: "2px 2px orange",
         }}
       >
-        About Us
+        Hakkımızda
       </h1>
       <div className="about-content">
-        We were founded in 2023 about sharing new events in the Turkey. You
-        follow me on our Social Media and we can reach new communities.Together
-        we want to reach new aims with your supports.
+        Biz 2023 yılında Türkiyedeki yapılacak etkinlikleri duyurmak için
+        kurulduk. Bizi sosyal medya hesaplarımızdan takip edebilirsin.Senin
+        desteğinle birlikte yeni etkinliklerden daha fazla insanın bilgi sahibi
+        olmasını sağlayabilir ve arkadaşlarımızın daha fazla sosyalleşmesine
+        katkıda bulunabiliriz.
       </div>
       <div className="profile">
         <a href="https://www.instagram.com/salimberk_uzun/?utm_source=qr&igshid=OGIxMTE0OTdkZA==">
