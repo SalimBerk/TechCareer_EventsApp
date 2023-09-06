@@ -9,7 +9,9 @@
 - You can follow new events.
 - You can see details of events.
 - You can see past events.
-- You can see events by clicked city
+- You can see events by clicked city.
+- You can see events by date.
+- you can see event by making search
 - You can learn where you will buy ticket.
 
 ---
