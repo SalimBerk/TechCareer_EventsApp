@@ -61,13 +61,16 @@ export const EventsByCity = () => {
                 className="row"
               >
                 <Typography
+                  data-aos="zoom-in"
+                  data-aos-offset="200"
+                  data-aos-delay="150"
                   variant="h4"
                   sx={{
                     border: "2px solid orange",
                     borderRadius: "50px",
                     width: "70%",
                     padding: "2rem",
-                    marginBottom: "10%",
+                    marginBottom: "20%",
                     textShadow: "1px 1px orange",
                     fontWeight: "bold",
                   }}
@@ -76,6 +79,8 @@ export const EventsByCity = () => {
                 </Typography>
 
                 <LocationCityIcon
+                  data-aos="zoom-in"
+                  data-aos-delay="600"
                   sx={{
                     width: "500px",
                     height: "500px",

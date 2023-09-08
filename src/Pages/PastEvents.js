@@ -59,7 +59,7 @@ export const PastEvents = () => {
         <div className="container-fluid">
           <div className="row">
             <span></span>
-            <div className="col-md-12 past-events">
+            <div data-aos="zoom-in-up" className="col-md-12 past-events">
               <h1
                 style={{
                   textAlign: "center",

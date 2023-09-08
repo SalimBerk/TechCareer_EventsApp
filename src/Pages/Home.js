@@ -223,10 +223,13 @@ export const Home = () => {
               marginBottom: "1rem",
               textShadow: "2px 2px orange",
             }}
+            className="popular-title"
+            id="popular-title"
           >
             Popüler Etkinlikler
           </h1>
           <Carousel
+            className="carousel"
             indicatorIconButtonProps={{
               style: {
                 marginTop: "1rem",
@@ -280,6 +283,8 @@ export const Home = () => {
           <div className="row">
             <div className="col-md-2">
               <List
+                data-aos="fade-right"
+                data-aos-delay="650"
                 sx={{
                   width: "100%",
                   maxWidth: 360,
@@ -384,7 +389,11 @@ export const Home = () => {
                   </ListItem>
                 </button>
               </List>
-              <div className="date-filter">
+              <div
+                data-aos="fade-right"
+                data-aos-delay="650"
+                className="date-filter"
+              >
                 <h3
                   style={{
                     marginBottom: "1rem",

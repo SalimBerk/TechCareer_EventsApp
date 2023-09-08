@@ -12,7 +12,12 @@ export const Card = ({ item }) => {
   }
   return (
     <div className="col-md-4 ">
-      <div className="card gap-3">
+      <div
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="150"
+        className="card gap-3"
+      >
         <a className="wrapper" href={`/events/${item.id}`}>
           <img
             style={{
